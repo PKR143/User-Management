@@ -1,21 +1,19 @@
 package com.demo.controller;
 
 import com.demo.model.Dashboard;
-import com.demo.model.HeartBeatResponse;
 import com.demo.model.UserResponse;
 import com.demo.service.DashboardService;
 import com.demo.util.Util;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.authentication.AbstractAuthenticationToken;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Map;
+import java.util.HashSet;
+
 
 @RestController
 @RequestMapping("/api/v1/um")
@@ -24,6 +22,8 @@ import java.util.Map;
 public class MyController {
 
     private final DashboardService dashboardService;
+
+    HashSet set = new HashSet();
 
     @GetMapping("/dashboard")
     public ResponseEntity<?> home(Authentication auth){
