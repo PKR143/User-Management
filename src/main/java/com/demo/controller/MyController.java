@@ -12,7 +12,6 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashSet;
 
 
 @RestController
@@ -22,8 +21,6 @@ import java.util.HashSet;
 public class MyController {
 
     private final DashboardService dashboardService;
-
-    HashSet set = new HashSet();
 
     @GetMapping("/dashboard")
     public ResponseEntity<?> home(Authentication auth){
